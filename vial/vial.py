@@ -12,8 +12,8 @@ import pendulum
 from __init__ import __version__ as API_VERSION
 
 NAVIGATION_ITEMS = [
-    ('/#', 'Root'),
-    ('/doc', 'Documentation'),
+#    ('/#', 'Root'),
+#    ('/doc', 'Documentation'),
 ]
 
 
@@ -69,7 +69,9 @@ class AppResponse(dict):
         self['_now'] = pendulum.now(tz='UTC').strftime('%Y-%m-%d %H:%M:%S')
 
         if 'navigation' not in self.keys():
-            self['navigation'] = list(self.navigation)
+            nav_items = list(self.navigation)
+            if nav_items:
+                self['navigation'] = nav_items
 
     @property
     def navigation(self):
