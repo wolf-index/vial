@@ -4,3 +4,5 @@
 /venv
 /coshed-*.json
 /doc/build
+/dist
+*.egg-info
