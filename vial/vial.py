@@ -66,7 +66,7 @@ class AppResponse(dict):
             self['version'] = API_VERSION
         except NameError:
             self['version'] = '0.0.42'
-        self['_now'] = pendulum.now(tz='UTC')
+        self['_now'] = pendulum.now(tz='UTC').strftime('%Y-%m-%d %H:%M:%S')
 
         if 'navigation' not in self.keys():
             self['navigation'] = list(self.navigation)
