@@ -7,7 +7,7 @@ from wsgiref.handlers import format_date_time
 import pprint
 
 import flask
-import pytz
+import pendulum
 
 from __init__ import __version__ as API_VERSION
 
@@ -66,7 +66,7 @@ class AppResponse(dict):
             self['version'] = API_VERSION
         except NameError:
             self['version'] = '0.0.42'
-        self['_now'] = pytz.utc.localize(datetime.datetime.utcnow())
+        self['_now'] = pendulum.now(tz='UTC')
 
         if 'navigation' not in self.keys():
             self['navigation'] = list(self.navigation)

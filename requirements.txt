@@ -1,3 +1,3 @@
-pytz>=2012c
+pendulum==2.0.4
 versioneer
 flask
