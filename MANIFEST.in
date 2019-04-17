@@ -1,0 +1,2 @@
+include versioneer.py
+include vial/_version.py
